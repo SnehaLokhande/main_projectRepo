@@ -1,0 +1,64 @@
+/* Enter your custom styles here */
+
+.customHeader {
+    padding: 1.5rem;
+}
+
+.classObjectHeader {
+    padding: inherit;
+}
+
+.classFlexBoxPadding {
+    paddingt: 2rem !important;
+}
+
+html.sap-desktop .sapMShellAppWidthLimited .sapMShellCentralBox {
+    width: 100% !important;
+    margin-left: 0px !important;
+    left: 0px !important;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.classIconTabContent>div,
+.classIconTabContent > div {
+    min-width: 100% !important;
+}
+
+.oDynamicLabelPadding {
+    padding: 0.5rem;
+}
+
+.paddingSmall {
+    padding: 0.25rem;
+}
+
+.paddingSplit {
+    padding-left: 0.75rem;
+    padding-right: 0.25rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.paddingforTextClassTree {
+    padding: 0.5rem;
+}
+
+.paddingLeft {
+    padding-left: 1rem;
+}
+
+.paddingEqualIcon {
+    padding: 0.5rem;
+}
+
+.backgroundColorvalidateBtn {
+    bachground: green;
+}
+
+.EmptyLabelpaddingPUR {
+    padding: 1.5rem;
+}
+
+.EmptyLabelpaddingPURReview {
+    padding: 1rem;
+}

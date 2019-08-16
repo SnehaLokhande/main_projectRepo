@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"	controllerName="z_app_spare_parts.z_spare_parts1.controller.search">
+
+	<SelectDialog id="CharValueDialog" title="{i18n>SelectCharValue}" search="onlivechangeCharValueDialog" confirm="onhandleCloseCharValueDialog" cancel="onCancelPressCharValueDialog"  liveChange="onlivechangeCharValueDialog" items="{CharValueJsonModel>/results}" >
+		<StandardListItem title="{CharValueJsonModel>VALUE}" type="Active" description="{CharValueJsonModel>DESC}" />
+	</SelectDialog>
+	
+</core:FragmentDefinition>

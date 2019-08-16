@@ -1,0 +1,633 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:layout="sap.ui.layout"
+  xmlns:form="sap.ui.layout.form" xmlns:html="http://www.w3.org/1999/xhtml"
+  controllerName="z_app_spare_parts.z_spare_parts1.controller.ReviewReqCopyMaterial">
+  <App>
+    <pages>
+      <Page title="">
+        <customHeader>
+          <Bar>
+            <contentLeft>
+              <Button type="Back" press="_onFioriObjectPageHeaderPress"/>
+            </contentLeft>
+            <contentMiddle>
+              <Title text="{i18n>ReviewCopyMat}"/>
+            </contentMiddle>
+            <contentRight/>
+          </Bar>
+        </customHeader>
+        <content>
+          <uxap:ObjectPageLayout showTitleInHeaderContent="false" showHeaderContent="false" showEditHeaderButton="false" showFooter="false"
+            class="sapUiSizeCompact">
+            <uxap:headerTitle>
+              <uxap:ObjectPageHeader objectTitle=" " objectSubtitle="" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="false"
+                isObjectSubtitleAlwaysVisible="false" showPlaceholder="false">
+                <uxap:navigationBar/>
+                <uxap:actions/>
+                <uxap:breadCrumbsLinks/>
+              </uxap:ObjectPageHeader>
+            </uxap:headerTitle>
+            <uxap:headerContent>
+              <!--
+      <layout:VerticalLayout>
+        <HBox>
+        <Label text="gfh"></Label>
+        <Text text="dfhgdh"></Text>
+        </HBox>
+      </layout:VerticalLayout>-->
+              <!-- <VBox>
+                <items>
+                    <Image src="/webapp/resources/official-service.jpg" class="sapUxAPObjectPageHeaderObjectImage sapSmartTemplatesObjectPageHeaderImage" width="6rem" height="6rem" visible="true"/>
+                </items>
+            </VBox>
+            <VBox>
+                <items>
+                    <Title text="Request ID"/>
+                    <HBox>
+                        <items>
+                            <Label text="Contact data"/>
+                            <Label text=":" class="sapUiTinyMarginEnd"/>
+                            <ObjectStatus text=""/>
+                        </items>
+                    </HBox>
+                </items>
+            </VBox>-->
+            </uxap:headerContent>
+            <uxap:sections>
+              <uxap:ObjectPageSection title="Input Class Information">
+                <uxap:subSections>
+                  <uxap:ObjectPageSubSection title="Input Class Information">
+                    <uxap:blocks>
+                      <VBox>
+                        <IconTabBar id="idIconTabBarReviewRequestCopyMaterial">
+                          <items>
+                            <IconTabFilter icon="sap-icon://hint" text="Header Class" iconColor="Positive">
+                              <Bar>
+                                <contentRight>
+                                  <Button text="{i18n>SelectSubClass}" press="onSelectSubClassBtnPressNewMat" type="Emphasized"></Button>
+                                </contentRight>
+                              </Bar>
+                            </IconTabFilter>
+                          </items>
+                        </IconTabBar>
+                        <Bar>
+                          <contentMiddle>
+                            <ObjectStatus text="{i18n>VerifiedShortText}" state="Success"></ObjectStatus>
+                            <ObjectStatus id="idShortText_ReviewReqCopyMat" text="" state="Success"></ObjectStatus>
+                          </contentMiddle>
+                          <!--  <contentLeft>
+                            <CheckBox id="idBtnNoOemAvailable_ReviewReqCopyMat" text="{i18n>NOOEMAVAILABLE}" editable="false"></CheckBox>
+                          </contentLeft>-->
+                        </Bar>
+                      </VBox>
+                    </uxap:blocks>
+                  </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+              </uxap:ObjectPageSection>
+              <uxap:ObjectPageSection title="{i18n>HEADER}">
+                <uxap:subSections>
+                  <uxap:ObjectPageSubSection title="{i18n>HEADER}">
+                    <uxap:blocks>
+                      <layout:Grid defaultSpan="XL12 L12 M12 S12">
+                        <layout:content>
+                          <form:Form>
+                            <form:layout>
+                              <form:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+                                emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="4" columnsL="3" columnsM="2" singleContainerFullSize="false"/>
+                            </form:layout>
+                            <form:formContainers>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>USERNAME}" id="idinputusername_label_ReviewReqCopyMat" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputusername_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label id="idinputcontact_label_ReviewReqCopyMat" text="{i18n>CONTACT}" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputcontact_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>PLANT}" id="idplantinput_label_ReviewReqCopyMat" required="true"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idplantinput_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>PCN}" id="idinputpcn_label_ReviewReqCopyMat" required="true"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputpcn_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>BASEUNITOFMEASURE}" id="idBaseUOMinput_label_ReviewReqCopyMat" required="true"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idBaseUOMinput_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>CONSUMABLE}" id="idcomboboxconsumable_label_ReviewReqCopyMat" required="true"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idcomboboxconsumable_value_ReviewReqCopyMat"></Text>
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>
+                            </form:formContainers>
+                          </form:Form>
+                        </layout:content>
+                      </layout:Grid>
+                    </uxap:blocks>
+                  </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+              </uxap:ObjectPageSection>
+              <uxap:ObjectPageSection title="{i18n>MRP}">
+                <uxap:subSections>
+                  <uxap:ObjectPageSubSection title="{i18n>MRP}">
+                    <uxap:blocks>
+                      <layout:Grid defaultSpan="XL12 L12 M12 S12">
+                        <layout:content>
+                          <form:Form>
+                            <form:layout>
+                              <form:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+                                emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="4" columnsL="3" columnsM="2" singleContainerFullSize="false"/>
+                            </form:layout>
+                            <form:formContainers>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>FORECASTPERPERIOD}" id="idinputforecaseperiod_label_ReviewReqCopyMat" required="true"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputforecaseperiod_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>QNTYACTBATCH}" id="idinputquantityperbatch_label_ReviewReqCopyMat" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputquantityperbatch_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label id="idcheckboxrepair_label_ReviewReqCopyMat" text="{i18n>REPAIR}" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <CheckBox id="idcheckboxrepair_value_ReviewReqCopyMat" editable="false"></CheckBox>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <!--  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>COSTCENTER}" id="idinputcostcenter_label_ReviewReqCopyMat" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputcostcenter_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>-->
+                                </form:formElements>
+                              </form:FormContainer>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>PERIOD}" id="idinputperiod_label_ReviewReqCopyMat" required="true"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputperiod_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label id="idcheckboxstoragronly_label_ReviewReqCopyMat" text="{i18n>STORAGEONLY}" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <!--  <Text type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>-->
+                                      <CheckBox id="idcheckboxstoragronly_value_ReviewReqCopyMat" editable="false" select="onstorageonlycheckboxselected"></CheckBox>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>EOLFLAG}" id="idEOLFLAG_label_ReviewReqCopyMat" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <CheckBox id="idEOLFLAG_value_ReviewReqCopyMat" editable="false"></CheckBox>
+                                      <!--  <Text type="Text" value="{oNameContactModel>/Contact}" showValueHelp="false" enabled="true" visible="true" width="auto"
+                                        valueHelpOnly="false" maxLength="0"/>-->
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>REMARKFORECAST}" id="idinputremarkforcast_label_ReviewReqCopyMat" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputremarkforcast_value_ReviewReqCopyMat"/>
+                                      <!--<Text type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>-->
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>
+                            </form:formContainers>
+                          </form:Form>
+                        </layout:content>
+                      </layout:Grid>
+                    </uxap:blocks>
+                  </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+              </uxap:ObjectPageSection>
+              <uxap:ObjectPageSection title="{i18n>PUR}">
+                <uxap:subSections>
+                  <uxap:ObjectPageSubSection title="{i18n>PUR}">
+                    <uxap:blocks>
+                      <layout:Grid defaultSpan="XL12 L12 M12 S12">
+                        <layout:content>
+                          <form:Form>
+                            <form:layout>
+                              <form:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+                                emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="4" columnsL="3" columnsM="2" singleContainerFullSize="false"/>
+                            </form:layout>
+                            <form:formContainers>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>CRITICALPART}" id="idinputcriticalpart_label_ReviewReqCopyMat" required="true"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputcriticalpart_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>OEMVENDOR}" id="idinputfirstoemvendor_label_ReviewReqCopyMat" required="true"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputfirstoemvendor_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>SECONDVENDOR}" id="idinputsecondvendor_label_ReviewReqCopyMat" required="true"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputsecondvendor_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>THIRDOEMVENDOR}" id="idinputthirdoemvendor_label_ReviewReqCopyMat" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputthirdoemvendor_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>FOURTHVENDOR}" id="idinputfourthvendor_label_ReviewReqCopyMat" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputfourthvendor_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="" class="EmptyLabelpaddingPURReview"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Label text=""/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>OEMPART}" id="idinputoempartfirst_label_ReviewReqCopyMat" required="true"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputoempartfirst_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>SECONDPARTNUMBER}" id="idinputoempartsecond_label_ReviewReqCopyMat" required="true"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputoempartsecond_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>THIRDPARTNUMBER}" id="idinputoempartthird_label_ReviewReqCopyMat" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputoempartthird_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>FOURTHPARTNUMBER}" id="idinputoempartfourth_label_ReviewReqCopyMat" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputoempartfourth_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>
+                              <!--  <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>CRITICALPART}" id="idinputcriticalpart_label_ReviewReqCopyMat" required="true"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputcriticalpart_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>-->
+                            </form:formContainers>
+                          </form:Form>
+                        </layout:content>
+                      </layout:Grid>
+                    </uxap:blocks>
+                  </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+              </uxap:ObjectPageSection>
+              <uxap:ObjectPageSection title="{i18n>FIN}">
+                <uxap:subSections>
+                  <uxap:ObjectPageSubSection title="{i18n>FIN}">
+                    <uxap:blocks>
+                      <layout:Grid defaultSpan="XL12 L12 M12 S12">
+                        <layout:content>
+                          <form:Form>
+                            <form:layout>
+                              <form:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+                                emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="4" columnsL="3" columnsM="2" singleContainerFullSize="false"/>
+                            </form:layout>
+                            <form:formContainers>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>PROFITCENTRE}" id="idinputprofitcentre_label_ReviewReqCopyMat" required="true"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputprofitcentre_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>COSTCENTER}" id="idinputcostcenter_label_ReviewReqCopyMat" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputcostcenter_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>
+                            </form:formContainers>
+                          </form:Form>
+                        </layout:content>
+                      </layout:Grid>
+                    </uxap:blocks>
+                  </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+              </uxap:ObjectPageSection>
+              <uxap:ObjectPageSection title="{i18n>WH}">
+                <uxap:subSections>
+                  <uxap:ObjectPageSubSection title="{i18n>WH}">
+                    <uxap:blocks>
+                      <layout:Grid defaultSpan="XL12 L12 M12 S12">
+                        <layout:content>
+                          <form:Form>
+                            <form:layout>
+                              <form:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+                                emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="4" columnsL="3" columnsM="2" singleContainerFullSize="false"/>
+                            </form:layout>
+                            <form:formContainers>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label id="idcheckboxautserialno_label_ReviewReqCopyMat" text="{i18n>AUTSERIALNO}" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <CheckBox id="idcheckboxautserialno_value_ReviewReqCopyMat" editable="false"></CheckBox>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>UOI}" id="idinputuoi_label_ReviewReqCopyMat" required="true"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputuoi_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>ADDSTORAGETYPE}" id="addstoreinputid_label_ReviewReqCopyMat" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <MultiInput id="addstoreinputid_value_ReviewReqCopyMat" showValueHelp="false" enabled="false" visible="true" width="auto"></MultiInput>
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>SERIALNOPROF}" id="idinputserialnoprof_label_ReviewReqCopyMat" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputserialnoprof_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>CONVERSION}" id="idinputconversion_label_ReviewReqCopyMat" required="true"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputconversion_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>Remarks}" id="idinputremarks_label_ReviewReqCopyMat" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idinputremarks_value_ReviewReqCopyMat"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>SERLEVEL}" id="idseriallevelinput_label_ReviewReqCopyMat" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idseriallevelinput_value_ReviewReqCopyMat" visible="true" width="auto"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>
+                              <form:FormContainer title="">
+                                <form:formElements></form:formElements>
+                              </form:FormContainer>
+                            </form:formContainers>
+                          </form:Form>
+                        </layout:content>
+                      </layout:Grid>
+                    </uxap:blocks>
+                  </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+              </uxap:ObjectPageSection>
+              <uxap:ObjectPageSection title="{i18n>QM}">
+                <uxap:subSections>
+                  <uxap:ObjectPageSubSection title="{i18n>QM}">
+                    <uxap:blocks>
+                      <layout:Grid defaultSpan="XL12 L12 M12 S12">
+                        <layout:content>
+                          <form:Form>
+                            <form:layout>
+                              <form:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+                                emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="4" columnsL="3" columnsM="2" singleContainerFullSize="false"/>
+                            </form:layout>
+                            <form:formContainers>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label id="idcheckboxqualityinspect_label_ReviewReqCopyMat" text="{i18n>QTYINSP}" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <CheckBox id="idcheckboxqualityinspect_value_ReviewReqCopyMat" editable="false"></CheckBox>
+                                      <!--<Text type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>-->
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label id="idcheckboxbatchmanag_label_ReviewReqCopyMat" text="{i18n>BATCHMANAG}" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <CheckBox id="idcheckboxbatchmanag_value_ReviewReqCopyMat" editable="false"></CheckBox>
+                                      <!--<Text type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>-->
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label id="idcheckboxshelfile_label_ReviewReqCopyMat" text="{i18n>SHELLIFE}" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <CheckBox id="idcheckboxshelfile_value_ReviewReqCopyMat" editable="false"></CheckBox>
+                                      <!--<Text type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>-->
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>
+                            </form:formContainers>
+                          </form:Form>
+                        </layout:content>
+                      </layout:Grid>
+                    </uxap:blocks>
+                  </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+              </uxap:ObjectPageSection>
+              <uxap:ObjectPageSection title="{i18n>Remarks}">
+                <uxap:subSections>
+                  <uxap:ObjectPageSubSection title="{i18n>Remarks}">
+                    <uxap:blocks>
+                      <layout:Grid defaultSpan="XL12 L12 M12 S12">
+                        <layout:content>
+                          <form:Form>
+                            <form:layout>
+                              <form:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+                                emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="4" columnsL="3" columnsM="2" singleContainerFullSize="false"/>
+                            </form:layout>
+                            <form:formContainers>
+                              <form:FormContainer title="">
+                                <form:formElements>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label id="idReqComment_label_ReviewReqCopyMat" text="{i18n>Remarks}" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <Text id="idReqComment_value_ReviewReqCopyMat" visible="true"></Text>
+                                    </form:fields>
+                                  </form:FormElement>
+                                  <form:FormElement>
+                                    <form:label>
+                                      <Label text="{i18n>ATTACHMENT}" id="idAttachement_label_ReviewReqCopyMat" required="false"/>
+                                    </form:label>
+                                    <form:fields>
+                                      <List id="idAttachement_value_ReviewReqCopyMat" mode="None"/>
+                                    </form:fields>
+                                  </form:FormElement>
+                                </form:formElements>
+                              </form:FormContainer>
+                            </form:formContainers>
+                          </form:Form>
+                        </layout:content>
+                      </layout:Grid>
+                    </uxap:blocks>
+                  </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+              </uxap:ObjectPageSection>
+            </uxap:sections>
+          </uxap:ObjectPageLayout>
+        </content>
+        <footer>
+          <Toolbar>
+            <ToolbarSpacer/>
+            <Button text="{i18n>Submit}" id="idSubmitBtn_ReviewReqCopyMat" type="Default" iconFirst="true" width="auto" enabled="true" visible="true"
+              press="onPressSubmitReviewReqCopyMat"/>
+          </Toolbar>
+        </footer>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>

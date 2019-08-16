@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+
+	<SelectDialog id="UnitOfIssuedialogid" title="Select Unit Of Issue" search="onhandleSearchUnitOfIssue" confirm="onConfirmUnitOfIssue" liveChange="onLivechangeUnitOfIssue" cancel="onCancelUnitOfIssue"  items="{oUnitOfIssueModel>/results}">
+		<StandardListItem title="{oUnitOfIssueModel>VALUE}" type="Active" description="{oUnitOfIssueModel>DESC}"  />
+	</SelectDialog>
+	
+</core:FragmentDefinition>

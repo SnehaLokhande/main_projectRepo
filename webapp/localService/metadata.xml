@@ -1,0 +1,23 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+	<edmx:Reference xmlns:NS1="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"><edmx:Include xmlns:NS2="http://docs.oasis-open.org/odata/ns/edmx" Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/></edmx:Reference>
+	<edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:lang="de"
+			Namespace="ZC_MM_GET_CONFIG_CDS" xmlns:sap="http://www.sap.com/Protocols/SAPData" sap:schema-version="1">
+			<EntityType sap:content-version="1" Name="ZC_MM_GET_CONFIGType">
+				<Key><PropertyRef Name="p_appl"/><PropertyRef Name="p_field"/><PropertyRef Name="field"/><PropertyRef Name="value"/></Key><Property Name="p_appl" sap:display-format="UpperCase" MaxLength="10" Nullable="false" Type="Edm.String"/><Property Name="p_field" sap:display-format="UpperCase" MaxLength="30" Nullable="false" Type="Edm.String" sap:label="Feldname"/><Property Name="field" sap:display-format="UpperCase" MaxLength="30" Nullable="false" Type="Edm.String" sap:label="Feldname" sap:heading=""/><Property Name="value" MaxLength="30" Nullable="false" Type="Edm.String" sap:label=""/><Property Name="descr" MaxLength="30" Type="Edm.String" sap:label=""/><NavigationProperty Name="Parameters" sap:filterable="false" ToRole="FromRole_assoc_3F8F38A5E3BB01CB24C83F799061ADB9"
+					FromRole="ToRole_assoc_3F8F38A5E3BB01CB24C83F799061ADB9" Relationship="ZC_MM_GET_CONFIG_CDS.assoc_3F8F38A5E3BB01CB24C83F799061ADB9"/></EntityType>
+			<EntityType sap:content-version="1" Name="ZC_MM_GET_CONFIGParameters" sap:semantics="parameters">
+				<Key><PropertyRef Name="p_appl"/><PropertyRef Name="p_field"/></Key><Property Name="p_appl" sap:display-format="UpperCase" MaxLength="10" Nullable="false" Type="Edm.String" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:parameter="mandatory"/><Property Name="p_field" sap:display-format="UpperCase" MaxLength="30" Nullable="false" Type="Edm.String" sap:label="Feldname"
+					sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:parameter="mandatory"/><NavigationProperty Name="Set" ToRole="ToRole_assoc_3F8F38A5E3BB01CB24C83F799061ADB9"
+					FromRole="FromRole_assoc_3F8F38A5E3BB01CB24C83F799061ADB9" Relationship="ZC_MM_GET_CONFIG_CDS.assoc_3F8F38A5E3BB01CB24C83F799061ADB9"/></EntityType>
+			<Association sap:content-version="1" Name="assoc_3F8F38A5E3BB01CB24C83F799061ADB9"><End Type="ZC_MM_GET_CONFIG_CDS.ZC_MM_GET_CONFIGParameters" Role="FromRole_assoc_3F8F38A5E3BB01CB24C83F799061ADB9" Multiplicity="1"/><End Type="ZC_MM_GET_CONFIG_CDS.ZC_MM_GET_CONFIGType" Role="ToRole_assoc_3F8F38A5E3BB01CB24C83F799061ADB9" Multiplicity="*"/></Association>
+			<EntityContainer Name="ZC_MM_GET_CONFIG_CDS_Entities" sap:supported-formats="atom json xlsx" m:IsDefaultEntityContainer="true"><EntitySet sap:content-version="1" Name="ZC_MM_GET_CONFIGSet" sap:updatable="false" sap:creatable="false" sap:addressable="false"
+				sap:deletable="false" EntityType="ZC_MM_GET_CONFIG_CDS.ZC_MM_GET_CONFIGType"/><EntitySet sap:content-version="1" Name="ZC_MM_GET_CONFIG" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+				EntityType="ZC_MM_GET_CONFIG_CDS.ZC_MM_GET_CONFIGParameters" sap:pageable="false"/>
+				<AssociationSet sap:content-version="1" Name="assoc_3F8F38A5E3BB01CB24C83F799061ADB9" sap:updatable="false" sap:creatable="false"
+					sap:deletable="false" Association="ZC_MM_GET_CONFIG_CDS.assoc_3F8F38A5E3BB01CB24C83F799061ADB9"><End Role="FromRole_assoc_3F8F38A5E3BB01CB24C83F799061ADB9" EntitySet="ZC_MM_GET_CONFIG"/><End Role="ToRole_assoc_3F8F38A5E3BB01CB24C83F799061ADB9" EntitySet="ZC_MM_GET_CONFIGSet"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="./sap/ZC_MM_GET_CONFIG_CDS/$metadata" rel="self"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="./sap/ZC_MM_GET_CONFIG_CDS/$metadata" rel="latest-version"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

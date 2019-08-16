@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+
+	<!--items="{PCNJsonModel>/results}"-->
+	<SelectDialog id="ClusterDialogid" title="Select Cluster" search="onhandleSearch" confirm="onClusthandleClose" liveChange="onLivechangeClusterDialog" cancel="onClusthandleClose"  items="{ClusterJsonModel>/results}">
+		<StandardListItem title="{ClusterJsonModel>Class}" type="Active" description="{ClusterJsonModel>Descr}" />
+	</SelectDialog>
+	
+</core:FragmentDefinition>

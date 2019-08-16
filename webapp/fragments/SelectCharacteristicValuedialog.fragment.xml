@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+
+	<!--items="{PCNJsonModel>/results}"-->
+	<SelectDialog id="selectsubclasscharacvalueid" title="Select Charac Value" search="onhandleSearchSubClass" confirm="onSubClasshandleConfirm" liveChange="onLivechangeSubClassDialog" cancel="onSubClasshandleClose"  items="{SubClassJsonModel>/results}">
+		<StandardListItem title="{SubClassJsonModel>CLASS}"  description="{SubClassJsonModel>DESC}" type="Active"  />
+	</SelectDialog>
+	
+</core:FragmentDefinition>

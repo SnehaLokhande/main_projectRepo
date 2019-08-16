@@ -1,0 +1,331 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "z_app_spare_parts.z_spare_parts1",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZC_MM_GET_CONFIG_CDS": {
+				"uri": "/sap/opu/odata/sap/ZC_MM_GET_CONFIG_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZMM_SPARE_PARTS_SRV": {
+				"uri": "/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZMM_SPARE_PARTS_SRV/metadata.xml"
+				}
+			},
+			"ZC_MM_PCN_LIST_CDS": {
+				"uri": "/sap/opu/odata/sap/ZC_MM_PCN_LIST_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZC_MM_PCN_LIST_CDS/metadata.xml"
+				}
+			},
+			"ZC_MM_MAT_CLASS_CDS": {
+				"uri": "/sap/opu/odata/sap/ZC_MM_MAT_CLASS_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZC_MM_MAT_CLASS_CDS/metadata.xml"
+				}
+			},
+			"ZC_MM_GET_DOM_VAL_CDS": {
+				"uri": "/sap/opu/odata/sap/ZC_MM_GET_DOM_VAL_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZC_MM_GET_DOM_VAL_CDS/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "z_app_spare_parts.z_spare_parts1.view.Appview",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "z_app_spare_parts.z_spare_parts1.i18n.i18n"
+				}
+			},
+			"PCNJsonModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oJsonPCNModel": {
+				"uri": "/sap/opu/odata/sap/ZC_MM_PCN_LIST_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZC_MM_PCN_LIST_CDS",
+				"preload": true
+			},
+			"tableModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"tableModelSearchByClassTree": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"tableModelSearchByClassTreeLabel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"ClusterJsonModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"BaseUOMJsonModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"AddStoreTypeJsonModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"SerialLevelJsonModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"AutSerialNoJsonModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"selectedPlantextvalueJsonModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oPlantModelnewmat": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oProfitcenterJSONModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oUnitOfIssueModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oSerialNoJsonModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oPeriodJSONModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oCriticalPartJSONModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oCostcenterJsonModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"ConsumableJsonModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"SubClassJsonModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oClassJsonModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"CharValueJsonModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oClassificationTreeJsonModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oSubClassDynamicJsonModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"CharacteristicValueHelpJsonModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oRequestCopyMaterialModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"ATTACHMENT_MODEL_REQ_NEW_MAT": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"ATTACHMENT_MODEL_REQ_COPY_MAT": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"ATTACHMENT_MODEL_PLANT_EXT": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oDataClusterClass": {
+				"uri": "/sap/opu/odata/sap/ZC_MM_MAT_CLASS_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZC_MM_MAT_CLASS_CDS",
+				"preload": true
+			},
+			"oDataInputMatInfoDomain": {
+				"uri": "/sap/opu/odata/sap/ZC_MM_GET_DOM_VAL_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZC_MM_GET_DOM_VAL_CDS",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "z_app_spare_parts.z_spare_parts1.view",
+				"controlAggregation": "pages",
+				"controlId": "V_root",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "search",
+					"target": "search"
+				},
+				{
+					"pattern": "Plantextension",
+					"name": "Plantextension",
+					"target": "Plantextension"
+				},
+				{
+					"name": "NewMaterial",
+					"pattern": "NewMaterial",
+					"target": "NewMaterial"
+				},
+				{
+					"name": "RequestCopyMaterial",
+					"pattern": "RequestCopyMaterial",
+					"target": "RequestCopyMaterial"
+				},
+				{
+					"name": "ReviewReqNewMaterial",
+					"pattern": "ReviewReqNewMaterial",
+					"target": "ReviewReqNewMaterial"
+				},
+				{
+					"name": "ReviewReqCopyMaterial",
+					"pattern": "ReviewReqCopyMaterial",
+					"target": "ReviewReqCopyMaterial"
+				},
+				{
+					"name": "ReviewPlantExtension",
+					"pattern": "ReviewPlantExtension",
+					"target": "ReviewPlantExtension"
+				}
+			],
+			"targets": {
+				"search": {
+					"viewType": "XML",
+					"viewName": "search",
+					"viewLevel": 1,
+					"viewId": "search"
+				},
+				"Plantextension": {
+					"viewType": "XML",
+					"viewName": "Plantextension",
+					"viewLevel": 1,
+					"viewId": "plantextension"
+				},
+				"Appview": {
+					"viewType": "XML",
+					"viewName": "Appview",
+					"viewLevel": 1,
+					"viewId": "appview"
+				},
+				"NewMaterial": {
+					"viewType": "XML",
+					"viewName": "NewMaterial",
+					"viewLevel": 1,
+					"viewId": "newmaterial"
+				},
+				"RequestCopyMaterial": {
+					"viewType": "XML",
+					"viewName": "RequestCopyMaterial",
+					"viewLevel": 2,
+					"viewId": "requestCopyMaterial"
+				},
+				"ReviewReqNewMaterial": {
+					"viewType": "XML",
+					"viewName": "ReviewReqNewMaterial",
+					"viewLevel": 3,
+					"viewId": "reviewReqNewMaterial"
+				},
+				"ReviewReqCopyMaterial": {
+					"viewType": "XML",
+					"viewName": "ReviewReqCopyMaterial",
+					"viewLevel": 3,
+					"viewId": "reviewReqCopyMaterial"
+				},
+				"ReviewPlantExtension": {
+					"viewType": "XML",
+					"viewName": "ReviewPlantExtension",
+					"viewLevel": 3,
+					"viewId": "reviewPlantExtension"
+				}
+			}
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/z_spare_parts/webapp",
+		"_version": "1.1.0"
+	}
+}

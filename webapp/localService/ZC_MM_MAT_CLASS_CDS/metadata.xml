@@ -1,0 +1,24 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+	<edmx:Reference xmlns:NS1="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"><edmx:Include xmlns:NS2="http://docs.oasis-open.org/odata/ns/edmx" Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/></edmx:Reference>
+	<edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:lang="de"
+			Namespace="ZC_MM_MAT_CLASS_CDS" xmlns:sap="http://www.sap.com/Protocols/SAPData" sap:schema-version="1">
+			<EntityType sap:content-version="1" Name="ZC_MM_MAT_CLASSType">
+				<Key><PropertyRef Name="p_appl"/><PropertyRef Name="p_pcn"/><PropertyRef Name="PCN"/></Key><Property Name="p_appl" sap:display-format="UpperCase" MaxLength="10" Nullable="false" Type="Edm.String"/><Property Name="p_pcn" sap:display-format="UpperCase" MaxLength="9" Nullable="false" Type="Edm.String" sap:label="Warengruppe"/><Property Name="PCN" sap:display-format="UpperCase" MaxLength="9" Nullable="false" Type="Edm.String" sap:label="Warengruppe" sap:heading=""/><Property Name="Class" sap:display-format="UpperCase" MaxLength="18" Type="Edm.String" sap:label="Klasse" sap:heading=""
+					sap:quickinfo="Klassennummer"/><Property Name="Doc_Flag" sap:display-format="UpperCase" MaxLength="1" Type="Edm.String" sap:label=""/><NavigationProperty Name="Parameters" sap:filterable="false" ToRole="FromRole_assoc_2639F0503D618A18CC81B4D192DC8A34"
+					FromRole="ToRole_assoc_2639F0503D618A18CC81B4D192DC8A34" Relationship="ZC_MM_MAT_CLASS_CDS.assoc_2639F0503D618A18CC81B4D192DC8A34"/></EntityType>
+			<EntityType sap:content-version="1" Name="ZC_MM_MAT_CLASSParameters" sap:semantics="parameters">
+				<Key><PropertyRef Name="p_appl"/><PropertyRef Name="p_pcn"/></Key><Property Name="p_appl" sap:display-format="UpperCase" MaxLength="10" Nullable="false" Type="Edm.String" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:parameter="mandatory"/><Property Name="p_pcn" sap:display-format="UpperCase" MaxLength="9" Nullable="false" Type="Edm.String" sap:label="Warengruppe"
+					sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:parameter="mandatory"/><NavigationProperty Name="Set" ToRole="ToRole_assoc_2639F0503D618A18CC81B4D192DC8A34"
+					FromRole="FromRole_assoc_2639F0503D618A18CC81B4D192DC8A34" Relationship="ZC_MM_MAT_CLASS_CDS.assoc_2639F0503D618A18CC81B4D192DC8A34"/></EntityType>
+			<Association sap:content-version="1" Name="assoc_2639F0503D618A18CC81B4D192DC8A34"><End Type="ZC_MM_MAT_CLASS_CDS.ZC_MM_MAT_CLASSParameters" Role="FromRole_assoc_2639F0503D618A18CC81B4D192DC8A34" Multiplicity="1"/><End Type="ZC_MM_MAT_CLASS_CDS.ZC_MM_MAT_CLASSType" Role="ToRole_assoc_2639F0503D618A18CC81B4D192DC8A34" Multiplicity="*"/></Association>
+			<EntityContainer Name="ZC_MM_MAT_CLASS_CDS_Entities" sap:supported-formats="atom json xlsx" m:IsDefaultEntityContainer="true"><EntitySet sap:content-version="1" Name="ZC_MM_MAT_CLASSSet" sap:updatable="false" sap:creatable="false" sap:addressable="false"
+				sap:deletable="false" EntityType="ZC_MM_MAT_CLASS_CDS.ZC_MM_MAT_CLASSType"/><EntitySet sap:content-version="1" Name="ZC_MM_MAT_CLASS" sap:updatable="false" sap:creatable="false" sap:deletable="false"
+				EntityType="ZC_MM_MAT_CLASS_CDS.ZC_MM_MAT_CLASSParameters" sap:pageable="false"/>
+				<AssociationSet sap:content-version="1" Name="assoc_2639F0503D618A18CC81B4D192DC8A34" sap:updatable="false" sap:creatable="false"
+					sap:deletable="false" Association="ZC_MM_MAT_CLASS_CDS.assoc_2639F0503D618A18CC81B4D192DC8A34"><End Role="FromRole_assoc_2639F0503D618A18CC81B4D192DC8A34" EntitySet="ZC_MM_MAT_CLASS"/><End Role="ToRole_assoc_2639F0503D618A18CC81B4D192DC8A34" EntitySet="ZC_MM_MAT_CLASSSet"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="./sap/ZC_MM_MAT_CLASS_CDS/$metadata" rel="self"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="./sap/ZC_MM_MAT_CLASS_CDS/$metadata" rel="latest-version"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

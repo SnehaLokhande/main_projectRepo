@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core"
+	controllerName="z_app_spare_parts.z_spare_parts1.controller.search">
+	<SelectDialog id="CharacteristicValueHelp" title="{i18n>SelectCharValue}" search="onlivechangeCharacteristicValueHelpDialog" 
+confirm="onhandleConfirmCharacteristicValueHelpDialog" cancel="onCancelPressCharacteristicValueHelpDialog"  
+liveChange="onlivechangeCharacteristicValueHelpDialog" items="{CharacteristicValueHelpJsonModel>/results}" >
+<StandardListItem title="{CharacteristicValueHelpJsonModel>VALUE}" type="Active" description="{CharacteristicValueHelpJsonModel>DESC}" />
+	</SelectDialog>
+	<!--<Dialog id="CharacteristicValueHelp" title="{i18n>SelectCharValue}">
+		<subHeader>
+			<Bar>
+				<contentLeft>
+					<SearchField search="handleSearch"/>
+				</contentLeft>
+			</Bar>
+		</subHeader>
+		<content>
+			<List items="{CharacteristicValueHelpJsonModel>/results}" itemPress="onhandleConfirmCharacteristicValueHelpDialog" mode=singleselect>
+				<StandardListItem title="{CharacteristicValueHelpJsonModel>VALUE}" type="Active" description="{CharacteristicValueHelpJsonModel>DESC}"/>
+			</List>
+		</content>
+		<beginButton>
+			<Button text="Create" press="onCloseFilterOptionsDialogConfirm"/>
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" press="onCancelPressCharacteristicValueHelpDialog"/>
+		</endButton>
+	</Dialog>-->
+</core:FragmentDefinition>

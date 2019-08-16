@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+
+	<!--items="{PCNJsonModel>/results}"-->
+	<SelectDialog id="BaseUOMdialogid" title="Select Base Unit of Measure" search="onhandleSearchBaseBUOM" confirm="onBaseUOMDlgConfirm" liveChange="onLivechangeonBaseUOMDlg" cancel="onBaseUOMDlgCancel"  items="{BaseUOMJsonModel>/results}">
+		<StandardListItem title="{BaseUOMJsonModel>value}" type="Active" description="{BaseUOMJsonModel>descr}"  />
+	</SelectDialog>
+	
+</core:FragmentDefinition>

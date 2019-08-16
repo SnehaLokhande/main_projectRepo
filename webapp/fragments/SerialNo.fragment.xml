@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+
+	<!--items="{PCNJsonModel>/results}"-->
+	<SelectDialog id="SerialNodialogid" title="Select Serial Number" search="onhandleSearchSerialNo" confirm="onConfirmSerialNo" liveChange="onLivechangeSerialNo" cancel="onCancelSerialNo" items="{oSerialNoJsonModel>/results}" >
+		<StandardListItem title="{oSerialNoJsonModel>VALUE}" type="Active" description="{oSerialNoJsonModel>DESC}"  />
+	</SelectDialog>
+	
+</core:FragmentDefinition>

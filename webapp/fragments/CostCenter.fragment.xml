@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+
+	<!--items="{PCNJsonModel>/results}"-->
+	<SelectDialog id="CostCenterdialogid" title="Select Cost Center" search="onhandleSearchCostcenter" confirm="onConfirmCostcenter" liveChange="onLivechangeCostcenter" cancel="onCancelCostcenter"  items="{oCostcenterJsonModel>/results}">
+		<StandardListItem title="{oCostcenterJsonModel>VALUE}" type="Active" description="{oCostcenterJsonModel>DESC}"  />
+	</SelectDialog>
+	
+</core:FragmentDefinition>

@@ -1,0 +1,35 @@
+{"results":[
+  {
+"Matkl":"A0101",
+"Wgbez":"Process Wafer CZ 150"
+    
+  },
+  {
+   "Matkl":"A0102",
+"Wgbez":"Process Wafer CZ 200"
+  },
+  {
+    "Matkl":"A0103",
+"Wgbez":"Pro. Wafers FZ 150mm"
+  },
+  {
+    "Matkl":"A0104",
+"Wgbez":"Pro. Wafers FZ NTD"
+  },
+ {
+    "Matkl":"D0103",
+"Wgbez":"Logic Leadframes"
+  },
+ {
+    "Matkl":"D0122",
+"Wgbez":"Leadframe Dis l-less"
+  },
+ {
+    "Matkl":"D0599",
+"Wgbez":"Bond Wires, others"
+  }, 
+{
+    "Matkl":"D9998",
+"Wgbez":"HPS BE Mat. pre.met."
+  }
+]}

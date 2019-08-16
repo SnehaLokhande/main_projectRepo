@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+
+	<!--items="{PCNJsonModel>/results}"-->
+	<SelectDialog id="Plantdialogid" title="Select Plant" search="onhandleSearchPlant" confirm="onPlantConfirm" liveChange="onLivechangePlant" cancel="onPlantCancel"  items="{oPlantModelnewmat>/results}">
+		<StandardListItem title="{oPlantModelnewmat>VALUE}" description="{oPlantModelnewmat>DESC}" type="Active"  />
+	</SelectDialog>
+	
+</core:FragmentDefinition>

@@ -1,0 +1,116 @@
+{
+    "results" : [
+      {
+        "__metadata" : {
+          "id" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_CLASS_HEADERSet('TEST_SP_2')",
+          "uri" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_CLASS_HEADERSet('TEST_SP_2')",
+          "type" : "ZMM_SPARE_PARTS_SRV.ET_CLASS_HEADER"
+        },
+        "Class" : "TEST_SP_2",
+        "Descr" : "",
+        "Clint" : "",
+        "LEAF" : "",
+        "PCN" : "TEST",
+        "ET_SUB_CLASSNav" : {
+          "results" : [
+            {
+              "__metadata" : {
+                "id" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_SUB_CLASSSet('0000000826')",
+                "uri" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_SUB_CLASSSet('0000000826')",
+                "type" : "ZMM_SPARE_PARTS_SRV.ET_SUB_CLASS"
+              },
+              "CLINT" : "0000000826",
+              "DESC" : "Test_Spare_Part",
+              "CLASS" : "TEST_SP_SIMRIZ",
+              "ET_CLASS_HEADER" : {
+                "__deferred" : {
+                  "uri" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_SUB_CLASSSet('0000000826')/ET_CLASS_HEADER"
+                }
+              }
+            }
+          ]
+        },
+        "ET_CLASS_CHARNav" : {
+          "results" : [
+            {
+              "__metadata" : {
+                "id" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_CLASS_CHARSet('TEST_SP_GRP')",
+                "uri" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_CLASS_CHARSet('TEST_SP_GRP')",
+                "type" : "ZMM_SPARE_PARTS_SRV.ET_CLASS_CHAR"
+              },
+              "NAME" : "TEST_SP_GRP",
+              "SHORTTEXTREL" : "X",
+              "MANDATORY" : "",
+              "DEFVALUE" : "",
+              "DATATYP" : "CHAR",
+              "CHARLEN" : 3,
+              "DECLEN" : 0,
+              "ET_CLASS_HEADER" : {
+                "__deferred" : {
+                  "uri" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_CLASS_CHARSet('TEST_SP_GRP')/ET_CLASS_HEADER"
+                }
+              },
+              "ET_CHAR_VALUENav" : {
+                "results" : [
+                  {
+                    "__metadata" : {
+                      "id" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_CHAR_VALUESet('100')",
+                      "uri" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_CHAR_VALUESet('100')",
+                      "type" : "ZMM_SPARE_PARTS_SRV.ET_CHAR_VALUE"
+                    },
+                    "VALUE" : "100",
+                    "FIELD" : "",
+                    "DESC" : "GRP-2",
+                    "ET_CLASS_CHAR" : {
+                      "__deferred" : {
+                        "uri" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_CHAR_VALUESet('100')/ET_CLASS_CHAR"
+                      }
+                    }
+                  },
+                  {
+                    "__metadata" : {
+                      "id" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_CHAR_VALUESet('0%2C9')",
+                      "uri" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_CHAR_VALUESet('0%2C9')",
+                      "type" : "ZMM_SPARE_PARTS_SRV.ET_CHAR_VALUE"
+                    },
+                    "VALUE" : "0,9",
+                    "FIELD" : "",
+                    "DESC" : "GRP-2",
+                    "ET_CLASS_CHAR" : {
+                      "__deferred" : {
+                        "uri" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_CHAR_VALUESet('0%2C9')/ET_CLASS_CHAR"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "__metadata" : {
+                "id" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_CLASS_CHARSet('TEST_SP_COMP')",
+                "uri" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_CLASS_CHARSet('TEST_SP_COMP')",
+                "type" : "ZMM_SPARE_PARTS_SRV.ET_CLASS_CHAR"
+              },
+              "NAME" : "TEST_SP_COMP",
+              "SHORTTEXTREL" : "X",
+              "MANDATORY" : "",
+              "DEFVALUE" : "",
+              "DATATYP" : "NUM",
+              "CHARLEN" : 3,
+              "DECLEN" : 1,
+              "ET_CLASS_HEADER" : {
+                "__deferred" : {
+                  "uri" : "http://sapdps.sap.infineon.com:8058/sap/opu/odata/sap/ZMM_SPARE_PARTS_SRV/ET_CLASS_CHARSet('TEST_SP_COMP')/ET_CLASS_HEADER"
+                }
+              },
+              "ET_CHAR_VALUENav" : {
+                "results" : [
+
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+}

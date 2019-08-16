@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!--items="{PCNJsonModel>/results}"-->
+	<SelectDialog id="Consumabledialogid" title="Select Spare Parts Status" search="onhandleSearchConsumable" confirm="onDlgConfirmConsumable"
+		liveChange="onLivechangeDlgConsumable" cancel="onDlgCancelConsumable" items="{ConsumableJsonModel>/results}">
+		<StandardListItem title="{ConsumableJsonModel>descr}" type="Active" description="{ConsumableJsonModel>value}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

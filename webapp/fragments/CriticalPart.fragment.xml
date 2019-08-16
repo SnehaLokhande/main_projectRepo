@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+
+	<SelectDialog id="CriticalPartdialogid" title="Select Period" search="onhandleSearchCriticalPart" confirm="onConfirmCriticalPart" liveChange="onLivechangeCriticalPart" cancel="onCancelCriticalPart"  items="{oCriticalPartJSONModel>/results}">
+		<StandardListItem title="{oCriticalPartJSONModel>text}" type="Active" description="{oCriticalPartJSONModel>value}"  />
+	</SelectDialog>
+	
+</core:FragmentDefinition>

@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+
+	<SelectDialog id="Perioddialogid" title="Select Period" search="onhandleSearchPeriod" confirm="onConfirmPeriod" liveChange="onLivechangePeriod" cancel="onCancelPeriod"  items="{oPeriodJSONModel>/results}">
+		<StandardListItem title="{oPeriodJSONModel>text}" type="Active" description="{oPeriodJSONModel>value}" />
+	</SelectDialog>
+	
+</core:FragmentDefinition>

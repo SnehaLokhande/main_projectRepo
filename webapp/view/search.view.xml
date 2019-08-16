@@ -1,0 +1,301 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.f" xmlns:layout="sap.ui.layout"
+	xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" controllerName="z_app_spare_parts.z_spare_parts1.controller.search" displayBlock="true">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<customHeader>
+					<Bar>
+						<contentMiddle>
+							<Label text="{i18n>title}"/>
+						</contentMiddle>
+					</Bar>
+				</customHeader>
+				<content>
+					<ObjectHeader id="ObjectHeaderid" title="Search By OEM Part Number / Part Number" backgroundDesign="Solid" showTitleSelector="true"
+						titleSelectorPress="handleTitleSelectorPress" condensed="true"/>
+					<FlexBox backgroundDesign="Solid">
+						<items>
+							<HBox id="TextSearch" class="classFlexBoxPadding" visible="true" backgroundDesign="Solid">
+								<VBox class="customHeader" backgroundDesign="Solid">
+									<Label id="idOEMLabel" text="{i18n>OEMPARTNUMBER_PARTNUMBER}" width="" class="labels"/>
+									<Input id="idnumberOEM" enabled="true" visible="true" width="auto" maxLength="30"/>
+									<!--	<ComboBox id="plantFrom" placeholder="Select plant from">
+										<items>
+											<core:Item text="{i18n>OEMPARTNUMBER}" enabled="true" key="{item}"/>
+											<core:Item text="{i18n>PARTNUMBER}" enabled="true" key="{item}"/>
+										</items>
+									</ComboBox>-->
+										</VBox>
+								<VBox class="customHeader" backgroundDesign="Solid">
+									<!--<Label text=""/>-->
+									<!--<Input id="idnumberOEM" enabled="true" visible="true" width="auto" maxLength="30"/>-->
+									
+									<!--	new req 1-2-19 TB	-->
+									<Label id="idMatnrLabel" text="{i18n>Matnr}" visible="false" class="labels"/>
+									<Input type="Text" id="Matnrinputid" enabled="true" visible="false" width="auto" showValueHelp="false" valueHelpOnly="false"/>
+									<!--	new req 1-2-19 TB	-->
+								</VBox>
+								
+								<VBox class="customHeader" backgroundDesign="Solid">
+									<!--<Label text="{i18n>SelectPCN}" class="labels"/>
+									<Input type="Text" id="pcninputid" showValueHelp="true" enabled="true" width="auto" valueHelpOnly="false"
+										valueHelpRequest="onPCNbuttonpress" maxLength="0"/>-->
+									<!--	new req 1-2-19 TB	-->
+									<Label id="idMatDescLabel" text="{i18n>MaterialDescription}" visible="false" class="labels"/>
+									<Input type="Text" id="MaterialDescriptioninputid" showValueHelp="false" enabled="true" visible="false" width="auto" valueHelpOnly="false"/>
+									<!--	new req 1-2-19 TB	-->
+								</VBox>
+								<VBox class="customHeader" backgroundDesign="Solid">
+									<Label id="clusterlabelid" text="{i18n>CLUSTER}" class="labels" visible="true"/>
+									<Input type="Text" id="clusterinputid" showValueHelp="true" enabled="true" width="auto" valueHelpOnly="false" visible="true"
+										valueHelpRequest="onClusterhelppressed" maxLength="0"/>
+								</VBox>
+								<VBox class="customHeader" backgroundDesign="Solid"></VBox>
+								<VBox class="customHeader" backgroundDesign="Solid"></VBox>
+								<VBox class="customHeader" backgroundDesign="Solid">
+									<Label text=""/>
+									<Button text="{i18n>SEARCH}" press="onSearchBtnPressMaterial" type="Emphasized" icon="sap-icon://search"/>
+								</VBox>
+								<VBox class="customHeader" backgroundDesign="Solid">
+									<Label text=""/>
+									<Button text="{i18n>Refresh}" press="onRefreshBtnPressMaterial" type="Emphasized" icon="sap-icon://refresh"/>
+								</VBox>
+							</HBox>
+							<VBox id="TreeSearch" width="100%" visible="false">
+								<!--<Text text="Classification Tree"/>-->
+								<Bar>
+									<contentLeft>
+										<Text text="{i18n>ClassificationTree}"/>
+									</contentLeft>
+									<contentRight>
+										<Button text="{i18n>SEARCH}" type="Emphasized" press="onSelectClassificationTreeSearchBtnPress" icon="sap-icon://search"/>
+										<Button text="{i18n>Refresh}" press="onRefreshBtnPressClassTree" type="Emphasized" icon="sap-icon://refresh"/>
+									</contentRight>
+								</Bar>
+								<IconTabBar id="idIconTabBarClassificationTree" class="sapUiResponsiveContentPadding">
+									<items>
+										<IconTabFilter icon="sap-icon://hint" text="{i18n>TEST_SP}">
+											<!--<Label text="{i18n>OEMPARTNUMBER_PARTNUMBER}" class="oDynamicLabelPadding"/>
+											<Input type="Text" id="oempartnumClassificationTreeinputid" enabled="true" visible="true" width="auto"/>-->
+											<!--	<Bar>
+												<contentRight>
+													<Button text="{i18n>Next}" press="onSelectSubClassBtnPress" type="Emphasized"/>
+												</contentRight>
+											</Bar>-->
+										</IconTabFilter>
+									</items>
+								</IconTabBar>
+							</VBox>
+						</items>
+					</FlexBox>
+					<table:Table id="LineItemsSmartTable" rows="{tableModel>/results}" visibleRowCountMode="Auto" title="" selectionMode="Single"
+						rowSelectionChange="onSelectionSearchtable" visible="true">
+						<table:toolbar>
+							<OverflowToolbar class="toolbar">
+								<Title id="tabletitle" text="Items for Search By OEM Part Number" visible="true"/>
+								<Title id="tabletitleMatNum" text="Items for Search By Material Number" visible="false"/>
+								<Title id="tabletitleMatDesc" text="Items for Search By Material Description" visible="false"/>
+								<ToolbarSpacer/>
+							</OverflowToolbar>
+						</table:toolbar>
+						<table:columns>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{i18n>MATERIAL}"/>
+								<table:template>
+									<Text text="{tableModel>Material}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{i18n>OEMPARTNUMBER}"/>
+								<table:template>
+									<Text text="{tableModel>Value}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="16rem" hAlign="Center">
+								<Label text="{i18n>MaterialDescription}"/>
+								<table:template>
+									<Text text="{tableModel>Description}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="8rem" hAlign="Center">
+								<Label text="{i18n>PLANT}"/>
+								<table:template>
+									<Text text="{tableModel>Plant}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="11rem" hAlign="Center">
+								<Label text="{i18n>CLUSTER}"/>
+								<table:template>
+									<Text text="{tableModel>Class}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{i18n>EQUIPMENT}"/>
+								<table:template>
+									<Text text="{tableModel>Equip}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{i18n>PCN}"/>
+								<table:template>
+									<Text text="{tableModel>Pcn}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="5rem" hAlign="Center">
+								<Label text="{i18n>DELFLAGPLANT}"/>
+								<table:template>
+									<Text text="{tableModel>PDelFlag}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="5rem" hAlign="Center">
+								<Label text="{i18n>DELFLAGGLOBAL}"/>
+								<table:template>
+									<Text text="{tableModel>DelFlag}"/>
+								</table:template>
+							</table:Column>
+						</table:columns>
+					</table:Table>
+					<table:Table id="LineItemsSmartTableSearchByClassTree" rows="{tableModelSearchByClassTree>/results}" visibleRowCountMode="Auto"
+						visible="false" title="" selectionMode="Single" rowSelectionChange="onSelectionSearchtableClassificationTree">
+						<table:toolbar>
+							<OverflowToolbar class="toolbar">
+								<Title id="tabletitleSearchByClassTree" text="Items for Search By Class Tree"/>
+								<ToolbarSpacer/>
+							</OverflowToolbar>
+						</table:toolbar>
+						<table:columns>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>Material}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Material}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>OEMPARTNUMBER}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Value}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>Description}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Description}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>Plant}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Plant}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>Class}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Class}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>Equip}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Equip}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>Pcn}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Pcn}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>PDelFlag}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>PDelFlag}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>DelFlag}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>DelFlag}"/>
+								</table:template>
+								<!--	new columns-->
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>Val1}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Val1}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>Val2}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Val2}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>Val3}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Val3}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>Val4}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Val4}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>Val5}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Val5}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>Val6}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Val6}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>Val7}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Val7}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>Val8}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Val8}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>Val9}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Val9}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="auto" hAlign="Center">
+								<Label text="{tableModelSearchByClassTreeLabel>Val10}"/>
+								<table:template>
+									<Text text="{tableModelSearchByClassTree>Val10}"/>
+								</table:template>
+							</table:Column>
+						</table:columns>
+					</table:Table>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<content>
+							<ToolbarSpacer/>
+							<Button text="{i18n>PLANTEXTENSION}" id="idPlantExtensionBtn" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="false"
+								iconDensityAware="false" press="actionPlantExtension"/>
+							<Button text="{i18n>REQUESTNEWMATERIAL}" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true"
+								iconDensityAware="false" press="actionRequestNewMaterial"/>
+							<Button text="{i18n>REQUESTCOPYMATERIAL}" id="idRequestCopyMaterialBtn" type="Emphasized" iconFirst="true" width="auto" enabled="true"
+								visible="false" iconDensityAware="false" press="actionRequestCopyMaterial"/>
+						</content>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
